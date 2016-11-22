@@ -1,4 +1,4 @@
-<?php
+    <?php
 /**
  * Studioforty9_Recaptcha
  *
@@ -123,11 +123,15 @@ class Studioforty9_Recaptcha_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isAllowed($route)
     {
+
         if (! $this->isModuleActive() || ! $this->isEnabled()) {
             return false;
         }
         
         foreach($this->getEnabledRoutes() as $enabledRoute){
+            if(!$enabledRoute){
+                continue;
+            }
             if(strpos($route, $enabledRoute) !== false){
                 return true;
             }
