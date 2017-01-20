@@ -64,8 +64,10 @@ class Studioforty9_Recaptcha_Helper_Redirect extends Mage_Core_Helper_Abstract
             return $referer;
     	}
 
-    	if ($this->_session->hasLastUrl()) {
-    		return $this->_session->getLastUrl();
+    	if($this->_session) {
+            if ($this->_session->hasLastUrl()) {
+                return $this->_session->getLastUrl();
+            }
     	}
 
     	return $this->getRequestUri();
