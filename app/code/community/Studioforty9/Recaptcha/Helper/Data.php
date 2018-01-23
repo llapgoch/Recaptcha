@@ -1,4 +1,4 @@
-    <?php
+<?php
 /**
  * Studioforty9_Recaptcha
  *
